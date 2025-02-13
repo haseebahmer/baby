@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine, Ansa?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffcccb;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff1493;
+            font-size: 3em;
+        }
+        p {
+            color: #ff69b4;
+            font-size: 1.5em;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            color: #ff1493;
+            font-size: 2em;
+        }
+        .message {
+            color: #ff1493;
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .gif {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .response-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine, Ansa?</h1>
+    <div class="gif-container">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExemwzcGY0NHJ2MDUxZnA5NWpoa2lkbDZrMnBxaThta3RvOG8wY21uZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HOdVlufrjOv28/giphy.gif" alt="Romantic GIF 1" class="gif">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXhnYjNxbDk4cmFwMDJieTN5ZGkwYnhmYWVveDA0b2J1NjZ6amVkciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cIkOajONnP94I/giphy.gif" alt="Romantic GIF 2" class="gif">
+    </div>
+    <p>Click the button to respond:</p>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+    <div id="response" class="hidden">
+        <div class="response-container">
+            <p class="heart">❤️</p>
+            <p class="message">
+                I knew you would say yes. I really do love you a lot, Ansa, and I can't wait to wife you up. 
+                You truly are the most beautiful and caring person in the whole world. I am so madly in love 
+                with you, and I just think about you and only you. You complete me. ❤️
+            </p>
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODljcHo1Z2RucXQ0Z3BxMnl0dmdtajNiZzhiY2I4a296NXBsbW02aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4rONkkYKUUDe0/giphy.gif" alt="Romantic Response GIF" class="gif">
+        </div>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const response = document.getElementById('response');
+
+        yesButton.addEventListener('click', () => {
+            response.classList.remove('hidden');
+            noButton.style.display = 'none';
+            yesButton.style.display = 'none';
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
